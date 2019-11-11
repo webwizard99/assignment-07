@@ -1,32 +1,26 @@
 import storeitems from './storeitems.js';
+import UIController from './UIController.js';
 
-let state = (function(){
+let state = (function(UICTRL){
   let page = 1;
   let number = 20;
+
+  let items = [];
   
   return {
     getPage: function() {
       return page;
     },
-    
+
     init: function() {
       storeitems.initTestItems(40);
-      const items = storeitems.getItems(page, number);
-      const storeFrame = document.querySelector('.store-frame');
+      items = storeitems.getItems(page, number);
+      UICTRL.clearStore();
       items.forEach((item, itemN) => {
-        storeFrame.innerHTML += `
-        <div class="store-item" key="${itemN}">
-            <div class="item-pic" style={ background-image: ${item.img}}>
-              <p class="reader">${item.alt}</p>
-            </div>
-            <p class="item-title">${item.name}</p>
-            <p class="item-description">Scented Epsom Salt</p>
-            <p class="item-price">${item.price}</p>
-          </div>
-        `
+        UICTRL.addStoreItem(item, itemN);
       });
     }
   }
-}());
+}(UIController));
 
 state.init();
