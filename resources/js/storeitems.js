@@ -11,8 +11,10 @@ const storeitems = (function(){
   const flavors = [ 'Mint', 'Peppermint', 'Frankincense', 'Lavender', 'Tea Tree', 'Lemon', 'Sage', 'Clove'];
 
   return {
-    getItems: function() {
-      return items;
+    getItems: function(page, number) {
+      let start = (page - 1) * number;
+      let end = page * number - 1;
+      return items.slice(start, end);
     },
 
     setItems: function(newItems) {

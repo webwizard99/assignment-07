@@ -109,3 +109,9 @@
     width: 96%;
   }
 }
+
+/* pagination styles */
+.page-number-container ul {
+  list-style: none;
+  display: inline;
+}
