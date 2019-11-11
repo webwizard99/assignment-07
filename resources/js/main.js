@@ -25,6 +25,17 @@ let state = (function(UICTRL){
       renderItems();
     },
 
+    setNumber: function(newNumber) {
+      UICTRL.clearStore();
+      const currentIndex = page * number;
+      number = newNumber;
+      // reset page number to keep viewer around the same
+      // items they were looking at
+      const newPage = Math.floor(currentIndex / number);
+      page = newPage;
+      items = storeItems.getItems(page, number);
+    },
+
     init: function() {
       storeitems.initTestItems(40);
       items = storeitems.getItems(page, number);
