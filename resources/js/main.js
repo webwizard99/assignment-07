@@ -18,7 +18,7 @@ let state = (function(UICTRL){
     const maxPages = Math.ceil(total / number);
     let renderPages = [];
     if (maxPages <= 5) {
-      for (let i = 1; i <= 5; i++) {
+      for (let i = 1; i <= maxPages; i++) {
         renderPages.push(i);
       }
     }
