@@ -26,4 +26,6 @@ const UIController = (function(){
   }
 }());
 
+// <li><a key="1" data-page="1">1</a></li>
+
 export default UIController;
