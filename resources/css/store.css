@@ -113,5 +113,12 @@
 /* pagination styles */
 .page-number-container ul {
   list-style: none;
-  display: inline;
+  display: flex;
+  margin: none none 1.5rem 2rem;
+}
+
+.page-number a {
+  color: blue;
+  cursor: pointer;
+  margin-right: .3rem;
 }
