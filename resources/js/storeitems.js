@@ -13,7 +13,7 @@ const storeitems = (function(){
   return {
     getItems: function(page, number) {
       let start = (page - 1) * number;
-      let end = page * number - 1;
+      let end = page * number;
       return items.slice(start, end);
     },
 
