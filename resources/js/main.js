@@ -12,6 +12,19 @@ let state = (function(UICTRL){
       UICTRL.addStoreItem(item, itemN);
     });
   }
+
+  const renderPageNumbers = function() {
+    const total = storeitems.getItemsLength();
+    const maxPages = Math.ceil(total / number);
+    let renderPages = [];
+    if (maxPages <= 5) {
+      for (let i = 1; i <= 5; i++) {
+        renderPages.push(i);
+      }
+    }
+    UICTRL.clearPageNumbers();
+    UICTRL.renderPageNumbers(...renderPages);
+  }
   
   return {
     getPage: function() {
@@ -23,6 +36,7 @@ let state = (function(UICTRL){
       page = pageNumber;
       items = storeItems.getItems(page, number);
       renderItems();
+      renderPageNumbers();
     },
 
     setNumber: function(newNumber) {
@@ -41,6 +55,7 @@ let state = (function(UICTRL){
       items = storeitems.getItems(page, number);
       UICTRL.clearStore();
       renderItems();
+      renderPageNumbers();
     }
   }
 }(UIController));

@@ -11,17 +11,31 @@ const UIController = (function(){
     },
 
     addStoreItem: function(item, itemN) {
-      document.querySelector(domstrings.storeContainer)
-        .innerHTML += `
-        <div class="store-item" key="${itemN}">
-            <div class="item-pic" style={ background-image: ${item.img}}>
-              <p class="reader">${item.alt}</p>
-            </div>
-            <p class="item-title">${item.name}</p>
-            <p class="item-description">Scented Epsom Salt</p>
-            <p class="item-price">${item.price}</p>
+      const newItem = `
+      <div class="store-item" key="${itemN}">
+          <div class="item-pic" style={ background-image: ${item.img}}>
+            <p class="reader">${item.alt}</p>
           </div>
-        `;
+          <p class="item-title">${item.name}</p>
+          <p class="item-description">Scented Epsom Salt</p>
+          <p class="item-price">${item.price}</p>
+        </div>
+      `;
+      document.querySelector(domstrings.storeContainer)
+        .insertAdjacentHTML("beforeend", newItem);
+    },
+
+    clearPageNumbers: function() {
+      document.querySelector(domstrings.pageContainer)
+        .innerHTML = '';
+    },
+
+    renderPageNumbers: function(numbers) {
+      const pageContainer = document.querySelector(domstrings.pageContainer);
+      numbers.forEach((num, numIndex) => {
+        const pageNum = `<li><a key="${numIndex}" data-page="${num}">${num}</a></li>`
+        pageContainer.insertAdjacentHTML("beforeend", pageNum);
+      })
     }
   }
 }());

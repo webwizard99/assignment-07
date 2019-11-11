@@ -21,6 +21,10 @@ const storeitems = (function(){
       items = newItems;
     },
 
+    getItemsLength: function() {
+      return items.length;
+    },
+
     initTestItems: function(n) {
       // if (items != []) return;
       for (let i = 0; i < n; i++) {
@@ -29,8 +33,8 @@ const storeitems = (function(){
         let newItem = new item('../media/joanna-kosinska-Prfs32wh-o4-unsplash.jpg', 'A spoon-full of salt', `${flavors[flavor]} Salt`, `$${cost.toFixed(2)}`);
         items.push(newItem);
       }
-      
     }
+
 
   }
 }());
