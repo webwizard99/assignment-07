@@ -111,14 +111,19 @@
 }
 
 /* pagination styles */
+/* .page-number-container {
+  margin: none none 1.5rem 2rem;
+} */
+
 .page-number-container ul {
   list-style: none;
   display: flex;
-  margin: none none 1.5rem 2rem;
+  margin: 0 0 1.5rem 2rem;
 }
 
 .page-number-container a {
   color: blue;
   cursor: pointer;
-  margin-right: .3rem;
+  margin-right: .5rem;
+  text-decoration: none;
 }
