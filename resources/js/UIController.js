@@ -1,5 +1,5 @@
 const UIController = (function(){
-  domstrings = {
+  const domstrings = {
     storeContainer: '.store-frame',
     pageContainer: '.page-numbers'
   }
