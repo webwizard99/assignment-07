@@ -23,7 +23,7 @@ let state = (function(UICTRL){
       }
     }
     UICTRL.clearPageNumbers();
-    UICTRL.renderPageNumbers(...renderPages);
+    UICTRL.renderPageNumbers(renderPages);
   }
   
   return {
