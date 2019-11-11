@@ -117,7 +117,7 @@
   margin: none none 1.5rem 2rem;
 }
 
-.page-number a {
+.page-number-container a {
   color: blue;
   cursor: pointer;
   margin-right: .3rem;
