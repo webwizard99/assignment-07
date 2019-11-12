@@ -21,8 +21,8 @@ let state = (function(UICTRL){
     if (!e.target.classList.contains('page-num')) return;
 
     const newPage = e.target.getAttribute('data-page');
+    console.log(newPage);
     renderPage(newPage);
-    renderPageNumbers();
   }
 
   const renderItems = function() {
