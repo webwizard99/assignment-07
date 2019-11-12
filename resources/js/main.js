@@ -47,7 +47,7 @@ let state = (function(UICTRL){
   const renderPage = function(pageNumber) {
     UICTRL.clearStore();
     page = pageNumber;
-    items = storeItems.getItems(page, number);
+    items = storeitems.getItems(page, number);
     renderItems();
     renderPageNumbers();
   }
