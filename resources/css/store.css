@@ -135,3 +135,7 @@
 .current-page-num {
   font-weight: 700;
 }
+
+.number-selector {
+  width: 3rem;
+}
