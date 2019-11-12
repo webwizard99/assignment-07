@@ -111,14 +111,14 @@
 }
 
 /* pagination styles */
-/* .page-number-container {
+.page-number-container {
   margin: none none 1.5rem 2rem;
-} */
+  display: flex;
+}
 
 .page-number-container ul {
   list-style: none;
   display: flex;
-  margin: 0 0 1.5rem 2rem;
 }
 
 .page-number-container a {
