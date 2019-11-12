@@ -5,6 +5,10 @@ const UIController = (function(){
   }
 
   return {
+    getDomStrings: function() {
+      return domstrings;
+    },
+
     clearStore: function() {
       document.querySelector(domstrings.storeContainer)
         .innerHTML = '';
@@ -30,10 +34,15 @@ const UIController = (function(){
         .innerHTML = '';
     },
 
-    renderPageNumbers: function(numbers) {
+    renderPageNumbers: function(current, numbers) {
       const pageContainer = document.querySelector(domstrings.pageContainer);
       numbers.forEach((num, numIndex) => {
-        const pageNum = `<li><a key="${numIndex}" data-page="${num}">${num}</a></li>`
+        let pageNum = '';
+        if (num == current) {
+          pageNum = `<li><a class-name="page-num" key="${numIndex}" data-page="${num}"><em>${num}</em></a></li>`
+        } else {
+          pageNum = `<li><a class-name="page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
+        }
         pageContainer.insertAdjacentHTML("beforeend", pageNum);
       })
     }

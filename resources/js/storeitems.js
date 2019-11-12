@@ -14,6 +14,9 @@ const storeitems = (function(){
     getItems: function(page, number) {
       let start = (page - 1) * number;
       let end = page * number;
+      if (end >= items.length) {
+        end = items.length -1;
+      }
       return items.slice(start, end);
     },
 

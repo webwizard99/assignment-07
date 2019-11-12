@@ -7,6 +7,22 @@ let state = (function(UICTRL){
 
   let items = [];
 
+  const setEventListeners = function() {
+    const DOM = UICTRL.getDomStrings();
+
+    document.querySelector(DOM.pageContainer)
+      .addEventListener('click', handlePageNumber);
+  }
+
+  const handlePageNumber = function(e) {
+    if (!e.target.classList.contains('page-num')) return;
+
+    const newPage = e.target.getAttribute('data-page');
+    page = newPage;
+    renderPage();
+    renderPageNumbers();
+  }
+
   const renderItems = function() {
     items.forEach((item, itemN) => {
       UICTRL.addStoreItem(item, itemN);
@@ -23,20 +39,20 @@ let state = (function(UICTRL){
       }
     }
     UICTRL.clearPageNumbers();
-    UICTRL.renderPageNumbers(renderPages);
+    UICTRL.renderPageNumbers(page, renderPages);
+  }
+
+  const renderPage = function(pageNumber) {
+    UICTRL.clearStore();
+    page = pageNumber;
+    items = storeItems.getItems(page, number);
+    renderItems();
+    renderPageNumbers();
   }
   
   return {
     getPage: function() {
       return page;
-    },
-
-    renderPage: function(pageNumber) {
-      UICTRL.clearStore();
-      page = pageNumber;
-      items = storeItems.getItems(page, number);
-      renderItems();
-      renderPageNumbers();
     },
 
     setNumber: function(newNumber) {
@@ -51,6 +67,7 @@ let state = (function(UICTRL){
     },
 
     init: function() {
+      setEventListeners();
       storeitems.initTestItems(40);
       items = storeitems.getItems(page, number);
       UICTRL.clearStore();
