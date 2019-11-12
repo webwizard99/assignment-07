@@ -39,9 +39,9 @@ const UIController = (function(){
       numbers.forEach((num, numIndex) => {
         let pageNum = '';
         if (num == current) {
-          pageNum = `<li><a class-name="page-num current-page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
+          pageNum = `<li><a class="page-num current-page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
         } else {
-          pageNum = `<li><a class-name="page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
+          pageNum = `<li><a class="page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
         }
         pageContainer.insertAdjacentHTML("beforeend", pageNum);
       })
