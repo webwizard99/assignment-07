@@ -39,7 +39,7 @@ const UIController = (function(){
       numbers.forEach((num, numIndex) => {
         let pageNum = '';
         if (num == current) {
-          pageNum = `<li><a class-name="page-num" key="${numIndex}" data-page="${num}"><em>${num}</em></a></li>`
+          pageNum = `<li><a class-name="page-num current-page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
         } else {
           pageNum = `<li><a class-name="page-num" key="${numIndex}" data-page="${num}">${num}</a></li>`
         }

@@ -127,3 +127,11 @@
   margin-right: .5rem;
   text-decoration: none;
 }
+
+.page-num {
+  font-size: 1.2rem;
+}
+
+.current-page-num {
+  font-weight: 700;
+}

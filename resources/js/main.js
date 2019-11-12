@@ -15,11 +15,11 @@ let state = (function(UICTRL){
   }
 
   const handlePageNumber = function(e) {
+    console.log('handlePageNumber', e.target);
     if (!e.target.classList.contains('page-num')) return;
 
     const newPage = e.target.getAttribute('data-page');
-    page = newPage;
-    renderPage();
+    renderPage(newPage);
     renderPageNumbers();
   }
 
