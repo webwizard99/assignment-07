@@ -5,6 +5,8 @@ let state = (function(UICTRL){
   let page = 1;
   let number = 20;
 
+  const testData = 80;
+
   let items = [];
 
   const setEventListeners = function() {
@@ -68,7 +70,7 @@ let state = (function(UICTRL){
 
     init: function() {
       setEventListeners();
-      storeitems.initTestItems(40);
+      storeitems.initTestItems(testData);
       items = storeitems.getItems(page, number);
       UICTRL.clearStore();
       renderItems();
